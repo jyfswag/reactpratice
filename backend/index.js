@@ -3,7 +3,7 @@
 //////////////////////////////////////////////////////
 const express = require('express');
 const cors = require('cors');
-const connection = require('./db'); //Import from db.js
+// const connection = require('./db'); //Import from db.js
 
 
 
@@ -20,7 +20,8 @@ const PORT = process.env.PORT || 3000;
 app.use(cors());
 app.use(express.json());
 
-app.use("/", express.static("../frontend"));
+app.use("/", express.static("../frontend-react/build"));
+app.use("/legacy", express.static("../frontend-react"));
 
 //////////////////////////////////////////////////////
 // DISPLAY SERVER RUNNING
